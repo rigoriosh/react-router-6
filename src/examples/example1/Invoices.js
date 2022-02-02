@@ -4,13 +4,13 @@ import { getInvoices } from '../../constants/data';
 
 function QueryNavLink({ to, ...props }) {
     let location = useLocation();
-    console.log(location);
     return <NavLink to={to + location.search} {...props} />;
   }
 
 export const Invoices = () => {
     let invoices = getInvoices();
     let [searchParams, setSearchParams] = useSearchParams();
+
     
     return (
         <div style={{ display: "flex" }}>
