@@ -10,6 +10,9 @@ import { CustomFilter } from './examples/example4/CustomFilter';
 import { LazyLoading } from './examples/lazyLoading/LazyLoading';
 import { Modal } from './examples/modal/Modal';
 import { Main } from './examples/multiApp/Main';
+import { RouteObjects } from './examples/routeObjects/RouteObjects';
+import { RutasAnidadas } from './examples/rutasAnidadas/RutasAnidadas';
+import { SearchParams } from './examples/searchParams/SearchParams';
 import { Home } from './Home';
 
 export const StoreContext = createContext(null);
@@ -104,18 +107,45 @@ export const opcionesEjercicios = [
   },
   {
     value:'multiApp',
-    descripcion: 'multiApp',
+    descripcion: 'multi App',
     ruta:'multiApp',
     componente: <Main/>,
     overview:'This example demonstrates how you can stitch two React Router apps together using the `basename` prop on `BrowserRouter` and `StaticRouter`.',
     url:'https://reactrouter.com/docs/en/v6/examples/multi-app',
   },
+  {
+    value:'RouteObjects',
+    descripcion: 'Route Objects',
+    ruta:'RouteObjects',
+    componente: <RouteObjects/>,
+    overview:[
+      `This example demonstrates how to use React Router's "route object" API instead of the JSX API to configure your routes. Both APIs are first-class. In fact, React Router actually uses the object-based API internally by creating route objects from your <Route>elements.`,
+      `React Router exposes a useRoutes() hook that allows you to hook into the same matching algorithm that <Routes> uses internally to decide which <Route> to render. When you use this hook, you get back an element that will render your entire route hierarchy.`,
+    ],
+    url:'https://reactrouter.com/docs/en/v6/examples/route-objects',
+  },
+  {
+    value:'SearchParams',
+    descripcion: 'Search Params',
+    ruta:'SearchParams',
+    componente: <SearchParams/>,
+    overview: [`This example demonstrates a simple search page that makes a request for user data to the GitHub API and displays information for that user on the page. The example uses the useSearchParams() hook to read and write the URL query string.`,],
+    url:'https://reactrouter.com/docs/en/v6/examples/search-params',
+  },
+  {
+    value:'rutasAnidadas',
+    descripcion: 'Rutas Anidadas',
+    ruta:'rutasAnidadas',
+    componente: <RutasAnidadas/>,
+    overview: [`Probar rutas padres e hijas`,],
+    url:'',
+  },
   // {
   //   value:'example2',
-  //   descripcion: 'example2',
+  //   descripcion: '',
   //   ruta:'example2',
   //   componente: <Explample1/>,
-  //   overview:'pendiente descricion',
+  //   overview: [``,],
   //   url:'',
   // },
 ]

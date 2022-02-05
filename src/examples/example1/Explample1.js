@@ -24,36 +24,35 @@ export const Explample1 = () => {
                 <Link to="/expenses" style={{color: store.pathName === "/expenses" ? 'red' : ''}} >Expenses</Link>
             </nav>
             <Routes>
-            {/* <Route path="/" element={ <AppRouter/>} /> */}
-            <Route path="/" element={ <HomePage/>}>
-                <Route
-                    index
-                    element={
-                        <main style={{ padding: "1rem" }}>
-                        <p>index Home</p>
-                        </main>
-                    }
-                />
-                <Route path="expenses" element={<Expenses />} />
-                <Route path="invoices" element={<Invoices />}>
-                    <Route index element={
-                        <main style={{ padding: "1rem" }}>
-                            <p>Select an invoice</p>
-                        </main>
+                <Route path="/" element={ <HomePage/>}>
+                    <Route
+                        index
+                        element={
+                            <main style={{ padding: "1rem" }}>
+                            <p>index Home</p>
+                            </main>
                         }
                     />
-                    <Route path=":invoiceId" element={<Invoice />} />
+                    <Route path="expenses" element={<Expenses />} />
+                    <Route path="invoices" element={<Invoices />}>
+                        <Route index element={
+                            <main style={{ padding: "1rem" }}>
+                                <p>Select an invoice</p>
+                            </main>
+                            }
+                        />
+                        <Route path=":invoiceId" element={<Invoice />} />
+                    </Route>
                 </Route>
-            </Route>
             
-            <Route
-                path="*"
-                element={
-                <main style={{ padding: "1rem" }}>
-                    <p>There's nothing here!</p>
-                </main>
-                }
-            />
+                <Route
+                    path="*"
+                    element={
+                    <main style={{ padding: "1rem" }}>
+                        <p>There's nothing here!</p>
+                    </main>
+                    }
+                />
             </Routes>
         </BrowserRouter>
       </div>;
